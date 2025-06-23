@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradyumna R N</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #2a2a2a;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #4CAF50;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+  
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 40px 0;
+        }
+
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .about-left {
+            background-color: #2a2a2a;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .about-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #4CAF50;
+        }
+
+        .about-info {
+            margin-bottom: 20px;
+        }
+
+        .about-info strong {
+            color: #4CAF50;
+            display: inline-block;
+            width: 60px;
+        }
+
+
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+         .experience-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+        .experience-item {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .experience-item h4 {
+            color: #4CAF50;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .experience-item p {
+            font-size: 13px;
+            color: #cccccc;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .skill-category h4 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            font-size: 13px;
+            color: #cccccc;
+        }
+
+        .featured-section {
+            background-color: #2a2a2a;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .featured-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #3a3a3a;
+        }
+
+        .featured-item:last-child {
+            border-bottom: none;
+        }
+
+        .featured-item h4 {
+            color: #4CAF50;
+            font-size: 14px;
+        }
+
+        .featured-item span {
+            font-size: 12px;
+            color: #cccccc;
+        }
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the div */
+            display: block;
+            border-radius: 50%; 
+            }
+            .about-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* min-height: 100vh; Optional: centers vertically in viewport */
+            }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .about-section {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-section {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #4CAF50;
+        }
+  
+
+        .featured-item:hover {
+            background-color: #3a3a3a;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #2a2a2a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4CAF50;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #45a049;
+        }
+        .about-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;   /* or your desired width */
+  height: 600px;  /* or your desired height */
+  overflow: hidden;
+  position: relative;
+}
+a:hover {
+  color: #00ff00;
+  filter: drop-shadow(0 0 5px #337e33cc);
+  transition: color 0.2s, filter 0.2s;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div>
+                        <div>Pradyumna R N</div>
+                        <div style="font-size: 12px; font-weight: normal; color: #cccccc;">Artificial Intelligence & Data Science Engineer</div>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#about-section">HOME</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Replace the about-left div content with the new about section -->
+
+<section class="about-section" id="about-section">
+    <div class="about-left">
+        <h1 class="about-title">ABOUT</h1>
+        <div style="font-size: 15px; color: #cccccc; margin-bottom: 20px;">
+            Aspiring Artificial Intelligence and Data Science student seeking an internship to apply knowledge in machine learning,
+            data structures, and software development while contributing to innovative solutions.
+        </div>
+        <div class="about-info">
+            <strong>WHO //</strong>Pradyumna
+        </div>
+        <div class="about-info">
+            <strong>WHAT //</strong>Artificial Intelligence & Data Science Engineer
+        </div>
+        <div class="about-info">
+            <strong>WHERE //</strong> Bengaluru, KA
+        </div>
+        <div class="about-info">
+            <strong>WHY //</strong>Passionate about leveraging technology to solve real-world problems and enhance user experiences.
+        </div>
+    </div>
+<div class="about-container">
+  <div class="about-right">
+    <img src="IMG-20250306-WA0100_3-removebg.png" alt="Profile Image" class="profile-image">
+  </div>
+</div>
+</section>
+
+            <section class="experience-section">
+                <div>
+                    <h2 class="section-title">Project</h2>
+                    <div class="experience-item">
+                        <h4><a href="https://github.com/Pradyumna-RN/SignLanguageRecongnition.git" style="color: #4CAF50; text-decoration: none">Sign Language Translation</a></h4>
+                        <p>Developed a model to convert sign language gestures into English text in real-time</p>
+                    </div>
+                    <div class="experience-item">
+                        <h4><a href="https://github.com/Pradyumna-RN/WebVulnerabilityScanner.git" style="color: #4CAF50; text-decoration: none">Web Vulnerabilty Scanner Using ML</a></h4>
+                        <p>Developed a scanner that identifies web vulnerabilites using machine Learning</p>
+                    </div>
+                    <div class="experience-item">
+                        <h4><a href="https://github.com/Pradyumna-RN/Extract-Tables.git" style="color: #4CAF50; text-decoration: none">Extract-Tables</a></h4>
+                        <p>Built a program to extract tables from digital and scanned pdf</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="section-title">SKILLS</h2>
+                    <div class="skills-list">
+                        <div class="skill-category">
+                            <h4>Knowledge</h4>
+                            <ul>
+                                <li>Python</li>
+                                <li>Machine Learning</li>
+                                <li>C</li>
+                                <li>MySQL</li>
+                                <li>Jupyter Notebook</li>
+                                <li>CSS</li>
+                                <li>HTML</li>
+                                                           
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Tools</h4>
+                            <ul>
+                                <li>VSCode</li>
+                                <li>Jupyter Notebook</li>
+                                <li>Git</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="section-title">Certifications and Courses</h2>
+                    <div class="featured-section">
+                        <div class="featured-item">
+                            <h4><a href=https://drive.google.com/file/d/1qxRti4MTuJ0ndXIYUnjZ2jDuDglLajGc/view?usp=sharing style="color: #4CAF50; text-decoration: none">Cyber Security and Privacy</a></h4>
+                            <span></span>
+                        </div>
+                        <div class="featured-item">
+                            <h4><a href=https://drive.google.com/file/d/1oV80j2Z1CX3jutF5VI4skt1y-9FKoAFE/view?usp=sharing style="color: #4CAF50; text-decoration: none">Data Science for Engineers</a></h4>
+                            <span></span>
+                        </div>
+                        <div class="featured-item">
+                            <h4><a href=https://drive.google.com/file/d/16AbRo0CHOGqt5n91KBuMXS9HD2VrjMM7/view?usp=sharing=sharing style="color: #4CAF50; text-decoration: none">Front End Web Development</a></h4>
+                            <span></span>
+                        </div>
+                        <div class="featured-item">
+                            <h4><a href=https://drive.google.com/file/d/1ZNGPvOiQR2MujVLc6cDnAbbCDbXY6ilp/view?usp=sharing style="color: #4CAF50; text-decoration: none">Python for Data Science</a></h4>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" style="margin-top: 40px;">
+    <h2 class="section-title">Contact</h2>
+    <div style="background-color: #2a2a2a; padding: 24px; border-radius: 8px;">
+        <ul style="list-style: none; padding: 0; font-size: 15px;">
+            <li>
+                <strong style="color: #4CAF50;">Name:</strong> Pradyumna R N
+            </li>
+            <li>
+                <strong style="color: #4CAF50;">Email:</strong>
+                <a href="mailto:pradyumnarn04@gmail.com" style="color: #ffffff; text-decoration: none;">PradyumnaRN04@gmail.com</a>
+            </li>
+            <li>
+                <strong style="color: #4CAF50;">LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/pradyumna-r-n-a44522358" target="_blank" style="color: #ffffff; text-decoration: none;">linkedin.com/in/pradyumna-rn</a>
+            </li>
+            <li>
+                <strong style="color: #4CAF50;">GitHub:</strong>
+                <a href="https://github.com/Pradyumna-RN" target="_blank" style="color: #ffffff; text-decoration: none;">github.com/Pradyumna-RN</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+        </div>
+    </main>
+
+ 
+</body>
+</html>
